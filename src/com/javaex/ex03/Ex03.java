@@ -59,6 +59,16 @@ public class Ex03 {
 			}
 			String[] par = str.split(",");
 			if(par.length==3) {
+				String name = par[0];
+                String hp = par[1];
+                String company = par[2];
+                
+                System.out.println(str);
+                System.out.println("이름:  " + name);
+                System.out.println("핸드폰: " + hp);
+                System.out.println("회사:  " + company);
+                System.out.println("");
+				
 				
 			}
 		}

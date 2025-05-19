@@ -7,24 +7,25 @@ import java.io.Writer;
 
 public class Ex01 {
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		
-		//주 스트림
+		//주스트림 준비
 		Writer fw = new FileWriter("C:\\javaStudy\\song.txt");
+
+		//보조스트림 준비
+		BufferedWriter bw = new BufferedWriter(fw);
 		
-		//보조 스트림
-		BufferedWriter bfw = new BufferedWriter(fw);
+		bw.write("학교종이 땡땡땡");
+		bw.newLine();
+		bw.write("어서모이자");
+		bw.newLine();
+		bw.write("선생님이 우리를");
+		bw.newLine();
+		bw.write("기다리신다");
 		
-		bfw.write("학교종이 땡땡땡");
-		bfw.newLine();
-		bfw.write("어서 모이자");
-		bfw.newLine();
-		bfw.write("선생님이 우리를");
-		bfw.newLine();
-		bfw.write("기다리신다");
 		
-		//스트림종료
-		bfw.close();
+		//스트림 종료
+		bw.close();
 	}
 
 }

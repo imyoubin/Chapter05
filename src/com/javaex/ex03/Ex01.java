@@ -6,30 +6,34 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class Ex01 {
-	
+
 	public static void main(String[] args) throws IOException{
+
+		//UTF-8로 해석되서 깨진다,  파일은 MS949형식
 		
-		//UTF-8 파일로 해석되어서 파일은 MS949형식		
-		//주 스트림
-		Reader fre = new FileReader("C:\\javaStudy\\MS949.txt");
-		//보조 스트림
-		BufferedReader fr = new BufferedReader(fre);
+		// 주 스트림 준비
+		Reader fr = new FileReader("C:\\javaStudy\\MS949.txt");
+		// 보조 스트림 준비
+		BufferedReader br = new BufferedReader(fr);
+		System.out.println("----------------------스트림 준비완료");
 		
-		System.out.println("------------------------스트림 준비완료");
-		
-		//스트림 읽기
 		while(true) {
-			String str = fr.readLine();
-			if(str==null) {
-				System.out.println("------------------------스트림 끝");
+			
+			String str = br.readLine();
+			
+			if(str == null) {
+				System.out.println("-----------------------파일읽기 끝");
 				break;
 			}
+
 			System.out.println(str);
 		}
 		
-		//스트림 종료
-		fr.close();
-		System.out.println("------------------------스트림 종료");
+		// 스트림 닫기
+		br.close();
+		
+		System.out.println("-----------------------프로그램 종료");
+		
 	}
 
 }
